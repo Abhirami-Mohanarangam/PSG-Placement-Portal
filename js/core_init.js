@@ -1065,7 +1065,7 @@ function work_travel_company_build_page_toc() {
 		var separator = obj.data('separator');
 		toc_count++;
 		toc += '<div class="toc_item'+(separator=='yes' ? ' toc_separator' : '')+'">'
-			+(description ? '<div class="toc_description">'+description+'</div>' : '')
+			// +(description ? '<div class="toc_description">'+description+'</div>' : '')
 			+'<a href="'+(url ? url : '#'+id)+'" class="toc_icon'+(title ? ' with_title' : '')+' '+icon+'">'+(title ? '<span class="toc_title">'+title+'</span>' : '')+'</a>'
 			+'</div>';
 	});

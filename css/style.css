@@ -5099,8 +5099,8 @@ footer.twitter_wrap .sc_section_overlay {
 #toc.toc_no { display:none; }
 #toc .toc_inner {
 	position:absolute;
-	top: 50%;
-	right: -60px;
+	top: 49.5%;
+	right: -180px;
 	-webkit-transform:translateY(-50%);
 	   -moz-transform:translateY(-50%);
 	        transform:translateY(-50%);
@@ -5116,10 +5116,12 @@ footer.twitter_wrap .sc_section_overlay {
 }
 #toc .toc_item {
 	position:relative;
-	width:57px;
-	height:60px;
+	width:280px;
+	height:147px;
 	border-right:3px solid rgba(0,0,0,0.8);
 	background-color:rgba(0,0,0,0.8);
+	justify-content: center;
+	align-items: center;
 }
 #toc .toc_item.toc_separator {
 	margin-bottom: 1px;
@@ -5127,20 +5129,21 @@ footer.twitter_wrap .sc_section_overlay {
 #toc .toc_item.current,
 #toc .toc_item:hover {
 	background-color:rgba(128,128,128,0.8);
+	/* color: #21759b; */
 }
 #toc .toc_icon {
 	position:absolute;
 	display:block;
-	z-index:2;
-	top:0;
-	left:0;
-	width:57px;
+	/* z-index:2; */
+	top:75px;
+	left:50px;
+	/* width:57px; */
 	height: 60px;
-	line-height:60px;
-	text-align:center;
+	/* line-height:60px; */
+	/* text-align:center; */
 }
 #toc .toc_icon.with_title {
-	line-height:40px;
+	line-height:0px;
 }
 #toc .toc_icon:before {
 	font-size:inherit;
@@ -5150,18 +5153,18 @@ footer.twitter_wrap .sc_section_overlay {
 }
 #toc .toc_title {
 	position:absolute;
-	bottom:6px;
-	left:0;
+	/* top:16px; */
+	left: 57px;
 	display:block;
-	width: 57px;
-	line-height:12px;
+	width: 130px;
+	/* line-height:12px; */
 	font-size:12px;
 }
 #toc .toc_description {
 	position:absolute;
 	top:0;
 	right:-300px;
-	width:240px;
+	width:140px;
 	height:30px;
 	padding: 1em;
 	font-size: 0.875em;
@@ -5202,6 +5205,7 @@ footer.twitter_wrap .sc_section_overlay {
 .hover_icon {
 	position:relative;
 	display:block;
+	
 }
 .hover_icon:before {
 	font-family:'fontello';
