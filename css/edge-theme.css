@@ -1202,8 +1202,6 @@ progress {
   width: 100%;
   padding-right: var(--ensurance-gutter-x, 1rem);
   padding-left: var(--ensurance-gutter-x, 1rem);
-  margin-right: auto;
-  margin-left: auto;
 }
 
 @media (min-width: 540px) {
@@ -1218,17 +1216,17 @@ progress {
 }
 @media (min-width: 960px) {
   .container-lg, .container-md, .container-sm, .container {
-    max-width: 992px;
+    max-width: 1000px;
   }
 }
 @media (min-width: 1140px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1200px;
+    max-width: 1800px;
   }
 }
 @media (min-width: 1440px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1480px;
+    max-width: 1750px;
   }
 }
 .row {
@@ -9696,6 +9694,7 @@ textarea.form-control-lg {
 }
 
 .text-light {
+  padding-left: 2em;
   --ensurance-text-opacity: 1;
   color: rgba(var(--ensurance-light-rgb), var(--ensurance-text-opacity)) !important;
 }
@@ -10066,6 +10065,8 @@ textarea.form-control-lg {
 }
 
 .text-400 {
+  padding-left: 4em;
+  padding-right: 2em;
   color: #93AFB6 !important;
 }
 
@@ -19856,7 +19857,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   background-color: #222222;
-  background-image: url("../img/building.png");
 }
 
 pre,
@@ -21258,6 +21258,10 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 .container-xl,
 .container-xxl {
   position: relative;
+  background-image: url("../images/gallery-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .all-0 {
