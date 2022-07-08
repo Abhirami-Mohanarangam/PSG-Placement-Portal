@@ -5099,7 +5099,7 @@ footer.twitter_wrap .sc_section_overlay {
 #toc.toc_no { display:none; }
 #toc .toc_inner {
 	position:absolute;
-	top: 49.5%;
+	top: 26.5em;
 	right: -180px;
 	-webkit-transform:translateY(-50%);
 	   -moz-transform:translateY(-50%);
@@ -5114,6 +5114,7 @@ footer.twitter_wrap .sc_section_overlay {
 #toc:hover .toc_inner {
 	right:0;
 }
+
 #toc .toc_item {
 	position:relative;
 	width:280px;
@@ -5123,6 +5124,10 @@ footer.twitter_wrap .sc_section_overlay {
 	justify-content: center;
 	align-items: center;
 }
+
+
+
+
 #toc .toc_item.toc_separator {
 	margin-bottom: 1px;
 }

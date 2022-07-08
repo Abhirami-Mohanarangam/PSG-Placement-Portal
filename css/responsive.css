@@ -297,6 +297,41 @@ Apple iPod Touch (4th generation)
 		padding: 2.1429em;
 	}
 
+	#toc .toc_inner {
+		/* position:absolute; */
+		top: 24em;
+		right: -180px;
+		-webkit-transform:translateY(-50%);
+		   -moz-transform:translateY(-50%);
+				transform:translateY(-50%);
+		-webkit-transition: all 0.3s ease-out;
+		   -moz-transition: all 0.3s ease-out;
+			-ms-transition: all 0.3s ease-out;
+			 -o-transition: all 0.3s ease-out;
+				transition: all 0.3s ease-out; 
+	}
+
+	#toc .toc_item {
+		/* position:relative; */
+		width:280px;
+		height:90px;
+		border-right:3px solid rgba(0,0,0,0.8);
+		background-color:rgba(0,0,0,0.8);
+		justify-content: center;
+		align-items: center;
+	}
+
+	#toc .toc_title {
+		/* position:absolute; */
+		top:0px;
+		left: 57px;
+		
+		display:block;
+		width: 130px;
+		/* line-height:12px; */
+		font-size:10px;
+	}
+
 	/* Top Panel */
 	.top_panel_style_1 .contact_field {
 		text-align:center;
