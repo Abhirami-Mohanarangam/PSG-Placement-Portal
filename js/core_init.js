@@ -117,7 +117,7 @@ function work_travel_company_ready_actions() {
 				rez = JSON.parse(response);
 			} catch (e) {
 				rez = { error: WORK_TRAVEL_COMPANY_STORAGE['ajax_error'] };
-				console.log(response);
+				
 			}
 			if (rez.error === '') {
 				calendar.parent().fadeOut(200, function() {
@@ -158,10 +158,8 @@ function work_travel_company_ready_actions() {
     //----------------------------------------------
 
 	// Clone side menu for responsive
-	if (jQuery('ul#menu_side').length > 0) {
-		jQuery('ul#menu_side').clone().removeAttr('id').removeClass('menu_side_nav').addClass('menu_side_responsive').insertAfter('ul#menu_side');
-		work_travel_company_show_current_menu_item(jQuery('.menu_side_responsive'), jQuery('.sidebar_outer_menu_responsive_button'));
-	}
+
+
 	if (jQuery('.header_mobile').length > 0) {
 		jQuery('.header_mobile .menu_main_nav_area ul#menu_main').removeAttr('id');
 		jQuery('.header_mobile .menu_button').on('click', function(){
@@ -182,6 +180,11 @@ function work_travel_company_ready_actions() {
 				jQuery('body').removeClass('ios_fixed');
 			}
 		});
+	}
+
+	if (jQuery('ul#menu_side').length > 0) {
+		jQuery('ul#menu_side').clone().removeAttr('id').removeClass('menu_side_nav').addClass('menu_side_responsive').insertAfter('ul#menu_side');
+		work_travel_company_show_current_menu_item(jQuery('.menu_side_responsive'), jQuery('.sidebar_outer_menu_responsive_button'));
 	}
 
 	// Push menu button
@@ -239,9 +242,6 @@ function work_travel_company_ready_actions() {
 			color: WORK_TRAVEL_COMPANY_STORAGE['accent2_color']
 		});
 	}
-
-
-// var WORK_TRAVEL_COMPANY_STORAGE = {"strings":{"ajax_error":"Invalid server answer","bookmark_add":"Add the bookmark","bookmark_added":"Current page has been successfully added to the bookmarks. You can see it in the right panel on the tab &#039;Bookmarks&#039;","bookmark_del":"Delete this bookmark","bookmark_title":"Enter bookmark title","bookmark_exists":"Current page already exists in the bookmarks list","search_error":"Error occurs in AJAX search! Please, type your query and press search icon for the traditional search way.","email_confirm":"On the e-mail address &quot;%s&quot; we sent a confirmation email. Please, open it and click on the link.","reviews_vote":"Thanks for your vote! New average rating is:","reviews_error":"Error saving your vote! Please, try again later.","error_like":"Error saving your like! Please, try again later.","error_global":"Global error text","name_empty":"The name can&#039;t be empty","name_long":"Too long name","email_empty":"Too short (or empty) email address","email_long":"Too long email address","email_not_valid":"Invalid email address","subject_empty":"The subject can&#039;t be empty","subject_long":"Too long subject","text_empty":"The message text can&#039;t be empty","text_long":"Too long message text","send_complete":"Send message complete!","send_error":"Transmit failed!","login_empty":"The Login field can&#039;t be empty","login_long":"Too long login field","login_success":"Login success! The page will be reloaded in 3 sec.","login_failed":"Login failed!","password_empty":"The password can&#039;t be empty and shorter then 4 characters","password_long":"Too long password","password_not_equal":"The passwords in both fields are not equal","registration_success":"Registration success! Please log in!","registration_failed":"Registration failed!","geocode_error":"Geocode was not successful for the following reason:","googlemap_not_avail":"Google map API not available!","editor_save_success":"Post content saved!","editor_save_error":"Error saving post data!","editor_delete_post":"You really want to delete the current post?","editor_delete_post_header":"Delete post","editor_delete_success":"Post deleted!","editor_delete_error":"Error deleting post!","editor_caption_cancel":"Cancel","editor_caption_close":"Close"},"ajax_url":"https:\/\/travel.themerex.net\/wp-admin\/admin-ajax.php","ajax_nonce":"761936af65","use_ajax_views_counter":"","site_url":"https:\/\/travel.themerex.net","vc_edit_mode":"","theme_font":"Ubuntu","theme_color":"#2D1D3B","theme_bg_color":"#FFFFFF","slider_height":"730","system_message":{"message":"","status":"","header":""},"user_logged_in":"","toc_menu":"hide","toc_menu_home":"","toc_menu_top":"","menu_fixed":"","menu_mobile":"1100","menu_slider":"","menu_cache":"","demo_time":"0","media_elements_enabled":"1","ajax_search_enabled":"1","ajax_search_min_length":"3","ajax_search_delay":"200","css_animation":"1","menu_animation_in":"fadeIn","menu_animation_out":"fadeOutDown","popup_engine":"magnific","email_mask":"^([a-zA-Z0-9_\\-]+\\.)*[a-zA-Z0-9_\\-]+@[a-z0-9_\\-]+(\\.[a-z0-9_\\-]+)*\\.[a-z]{2,6}$","contacts_maxlength":"1000","comments_maxlength":"1000","remember_visitors_settings":"","admin_mode":"","isotope_resize_delta":"0.3","error_message_box":null,"viewmore_busy":"","video_resize_inited":"","top_panel_height":"0"};
 
 	// Show table of contents for the current page
 	if (WORK_TRAVEL_COMPANY_STORAGE['toc_menu'] != 'hide' && WORK_TRAVEL_COMPANY_STORAGE['toc_menu'] != 'no') {
@@ -574,13 +574,13 @@ function work_travel_company_scroll_actions() {
 		var now = pos==0;
 		if (!now) now = loc == href.substring(0, pos);
 		if (!now) return;
-		var off = jQuery(id).offset().top;
+		// var off = jQuery(id).offset().top;
 		var id_next  = jQuery(this).next().find('a').attr('href');
-		var off_next = id_next ? jQuery(id_next).offset().top : 1000000;
-		if (off < scroll_offset + jQuery(window).height()*0.8 && scroll_offset + WORK_TRAVEL_COMPANY_STORAGE['top_panel_height'] < off_next)
-			jQuery(this).addClass('current');
-		else
-			jQuery(this).removeClass('current');
+		// var off_next = id_next ? jQuery(id_next).offset().top : 1000000;
+		// if (off < scroll_offset + jQuery(window).height()*0.8 && scroll_offset + WORK_TRAVEL_COMPANY_STORAGE['top_panel_height'] < off_next)
+		// 	jQuery(this).addClass('current');
+		// else
+		// 	jQuery(this).removeClass('current');
 	});
 	
 	// Infinite pagination
@@ -767,6 +767,7 @@ function work_travel_company_responsive_menu() {
 function work_travel_company_is_responsive_need(max_width) {
 	"use strict";
 	var rez = false;
+	
 	if (max_width > 0) {
 		var w = window.innerWidth;
 		if (w == undefined) {
@@ -774,6 +775,7 @@ function work_travel_company_is_responsive_need(max_width) {
 		}
 		rez = max_width > w;
 	}
+	
 	return rez;
 }
 
@@ -1012,7 +1014,7 @@ function work_travel_company_resize_alter_portfolio() {
 function work_travel_company_init_sfmenu(selector) {
 	"use strict";
 	jQuery(selector).show().each(function() {
-		if (work_travel_company_is_responsive_need() && (jQuery(this).attr('id')=='menu_main' || jQuery(this).attr('id')=='menu_side')) return;
+		if (work_travel_company_is_responsive_need(WORK_TRAVEL_COMPANY_STORAGE['menu_mobile']) && (jQuery(this).attr('id')=='menu_main' || jQuery(this).attr('id')=='menu_side')) return;
 		jQuery(this).addClass('inited').superfish({
 			delay: 500,
 			animation: {
